@@ -1,0 +1,20 @@
+<%
+sites = @user.blog.sites
+%>
+<h1 class="headline">Seiten Verwaltung</h1>
+
+<section class="form content_box">
+	<% if sites.length == 0 then %>
+		<p>Keine Seiten vorhanden. <a href="/intern/editor/site.new">Neue Seite erstellen</a></p>
+	<% else %>
+	<table class="content_table">
+		<% sites.each do |site| %>
+			<tr>
+				<td><%=site.name %></td>
+				<td><a href="/intern/editor/site.<%=site.name %>" title="Seite bearbeiten">Bearbeiten</td>
+				<td><a href="/intern/delete/site.<%=site.name %>" title="Seite löschen">Löschen</td>
+			</tr>
+		<% end %>
+	</table>
+	<% end %>
+</section>

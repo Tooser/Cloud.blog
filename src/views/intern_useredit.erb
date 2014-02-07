@@ -1,0 +1,52 @@
+<h1 class="headline">Persönliche Informationen</h1>
+<section class="description">
+	<p>Hier können sie ihre Informationen einsehen und Benutzername und E-Mail Adresse ändern. Unten können sie zudem noch ihr persönliches Passwort ändern.</p>
+</section>
+
+<form action="/intern/useredit" method="post" accept-charset="utf-8" class="form content_box">
+	<h1>Userinformationen</h1>
+
+	<table class="content_table">
+		<tr>
+			<td class="label">User-ID:</td>
+			<td><%= @user.id %></td>
+		</tr><tr>
+			<td class="label">Username:</td>
+			<td><%= @user.name %></td>
+		</tr><tr>
+			<td class="label">Mitglied seit:</td>
+			<td><%= @user.created_at.to_s %></td>
+		</tr><tr>
+			<td colspan="2">&nbsp;</td>
+		</tr><tr>
+			<td class="label">E-Mail:</td>
+			<td><input type="text" name="email" value="<%= @user.email %>" class="form_input"></td>
+		</tr><tr>
+			<td colspan="2">&nbsp;</td>
+		</tr><tr>
+			<td colspan="2">
+				<button type="submit">E-Mail Adresse ändern</button>
+			</td>
+		</tr>
+	</table>
+</form>
+	
+<form action="/intern/passwd" method="post" accept-charset="utf-8" class="form content_box">
+	<h1>Passwort ändern</h1>
+
+	<table class="content_table">
+		<tr>
+			<td class="label">Neues Passwort:</td>
+			<td><input type="password" name="newpassword1" value="" class="form_input"></td>
+		</tr><tr>
+			<td class="label">Neues Passwort wiederholen:</td>
+			<td><input type="password" name="newpassword2" value="" class="form_input"></td>
+		</tr><tr>
+			<td colspan="2">&nbsp;</td>
+		</tr><tr>
+			<td colspan="2">
+				<button type="submit">Passwort ändern</button>
+			</td>
+		</tr>
+	</table>
+</form>

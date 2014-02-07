@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+		<title>Cloud.blog</title>
+		<link rel="stylesheet" type="text/css" href="/structure.css">
+		<link rel="stylesheet" type="text/css" href="/design.css">
+	</head>
+	
+	<body>
+		<div class="main">
+			<div class="main_header">
+				<div class="container">
+					<div class="logo_pane">
+						<h1>Cloud.blog</h1>
+					</div>
+					
+					<div class="login_pane">
+						<% if @user then %>
+							<p>Eingeloggt als:<br>
+							<b><%= @user.name %></b> (<a href="/logout" title="Abmelden">Abmelden</a>)</p>
+						<% else %>
+							<p>&nbsp;</p>
+						<% end %>
+					</div>
+				</div>
+			</div>
+				
+			<div class="main_content">
+				<div class="container">
+					<!-- BEGIN content -->
+					<%= yield %>
+					<!-- END content -->
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer">
+			<div class="container">
+				<p>&copy;2014 Cloud.Blog /// <a href="/impressum">Impressum</a></p>
+			</div>
+		</div>
+	</body>
+</html>

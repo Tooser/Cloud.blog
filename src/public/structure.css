@@ -1,0 +1,130 @@
+html, body {
+	padding: 0;
+	margin: 0;
+	
+	height: 100%;
+	
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+}
+
+/* --- MAIN structure --- */
+.main {
+	min-height: 100%;
+}
+
+.main_header {
+	height: 80px;
+}
+	.main_header .logo_pane {
+		width: 50%;
+		float: left;
+	}
+	.main_header .login_pane {
+		width: 50%;
+		float: left;
+	}
+
+.main_content {
+	padding-bottom: 500px;
+}
+
+.footer {
+	margin-top:-50px; 
+	height: 50px;
+}
+	.footer p {
+		text-align: center;
+	}
+
+
+
+.container {
+	width: 1000px;
+	margin: auto;
+}
+	
+/* --- Home structure --- */
+.box_container {
+	width: 500px;
+	float: left;
+	
+	min-height: 300px;
+}
+	.box_container .content {
+		margin: 20px;
+		padding: 20px;
+		
+		width: 460px;
+	}
+
+/* --- Navigation structure --- */
+.navigation {
+	width: 170px;
+	float: left;
+}
+	.navigation a {
+		display: inline-block;
+		width: 130px;
+		
+		padding: 5px 20px;
+	}
+
+/* --- Content structure --- */
+.content {
+	width: 790px;
+	float: left;
+	
+	padding: 0px 20px;
+}
+	.content .headline {
+		font-size: 1.8em;
+		padding-bottom: 5px;
+		
+		border-bottom: 1px solid black;
+	}
+	.content .description {
+		font-size: 0.9em;
+	}
+	
+	.content_box {
+		padding: 10px;
+	}
+	.content_box h1 {
+		font-size: 1.2em;
+	}
+	
+	.content .content_table {
+		width: 100%;
+	}
+	
+	.content .content_table .label {
+		width: 140px;
+		vertical-align: top;
+		
+		text-align: right;
+		padding-right: 10px;
+	}
+	
+/* --- form structure --- */
+.form {
+
+}
+	.form .form_input, .form .form_textarea, .form .form_button {
+		padding: 6px;
+		
+		border: 1px solid black;
+		
+		font-family: Tahoma, Geneva, sans-serif;
+		font-size: 12px;
+	}
+
+	.form .form_input {
+		min-width: 250px;
+	}
+	.form .form_textarea {
+		min-width: 400px;
+		min-height: 170px;
+	}
+	.form .form_button {
+	}

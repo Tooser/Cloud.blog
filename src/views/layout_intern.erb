@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+		<title>Cloud.blog</title>
+		<link rel="stylesheet" type="text/css" href="/structure.css">
+		<link rel="stylesheet" type="text/css" href="/design.css">
+	</head>
+	
+	<body>
+		<div class="main">
+			<div class="main_header">
+				<div class="container">
+					<div class="logo_pane">
+						<h1>Cloud.blog</h1>
+					</div>
+					
+					<div class="login_pane">
+						<% if @user then %>
+							<p>Eingeloggt als:<br>
+							<b><%= @user.name %></b> (<a href="/logout" title="Abmelden">Abmelden</a>)</p>
+						<% else %>
+							<p>&nbsp;</p>
+						<% end %>
+					</div>
+				</div>
+			</div>
+				
+			<div class="main_content">
+				<div class="container">
+					<!-- BEGIN content -->
+					<nav class="navigation">
+						<a href="/intern/home" title="Startseite">Startseite</a>
+						<a href="/intern/useredit" title="Persönliche Daten">Persönliche Daten</a>
+						<a href="/intern/blogsettings" title="Blog Einstellungen">Blog Einstellungen</a>
+						<hr>
+						<a href="/intern/posts" title="Post Verwaltung">Post Verwaltung</a>
+						<a href="/intern/sites" title="Seiten Verwaltung">Seiten Verwaltung</a>
+						<hr>
+						<a href="/intern/editor/post.new" title="Post erstellen">Post erstellen</a>
+						<a href="/intern/editor/site.new" title="Seite erstellen">Seite erstellen</a>
+					</nav>
+					
+					<section class="content">
+						<%= yield %>
+					</section>
+					<!-- END content -->
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer">
+			<div class="container">
+				<p>&copy;2014 Cloud.Blog /// <a href="/impressum">Impressum</a></p>
+			</div>
+		</div>
+	</body>
+</html>

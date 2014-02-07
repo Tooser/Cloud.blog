@@ -1,0 +1,42 @@
+<%
+client = @user.blog.client
+%>
+<h1 class="headline">Blogeinstellungen</h1>
+<section class="description">
+	<p>...</p>
+</section>
+
+<section class="form">
+	<h1>Dropbox Verknüpfung</h1>
+
+	<% if client then %>
+		<p>Verknüpft mit <b><%= client.account_info["display_name"] %></b></p>
+		<form action="/dropbox-unlink" method="get">
+			<button type="submit">Verknüpfung entfernen</button>
+		</form>
+	<% else %>
+		<form action="/dropbox-auth-start" method="get">
+			<button type="submit">Mit Dropbox-Konto verknüpfen</button>
+		</form>
+	<% end %>
+</section>
+
+<form action="/intern/blogsettings" method="post" accept-charset="utf-8" class="form content_box">
+	<h1>Blog Einstellungen</h1>
+	
+	<table class="content_table">
+		<tr>
+			<td class="label">Blogtitel:</td>
+			<td><input type="text" name="title" value="<%= @user.blog.title %>"  class="form_input"></td>
+		</tr><tr>
+			<td colspan="2">&nbsp;</td>
+		</tr><tr>
+			<td class="label">Beschreibung:</td>
+			<td><textarea style="width: 100%; height: 100px" class="form_textarea"><%= @user.blog.description %></textarea></td>
+		</tr><tr>
+			<td colspan="2">&nbsp;</td>
+		</tr><tr>
+			<td colspan="2"><button type="submit">Blog Einstellungen ändern</button></td>
+		</tr>
+	</table>
+</form>

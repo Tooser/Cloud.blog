@@ -1,0 +1,27 @@
+<%
+if @content.name == "new" then
+	if @content.class.name == "Post" then
+		site_headline = "Post Erstellen"
+		form_action = "/intern/editor/post.new"
+	else
+		site_headline = "Seite Erstellen"
+		form_action = "/intern/editor/site.new"
+	end
+else
+	if @content.class.name == "Post" then
+		site_headline = "Post editieren"
+		form_action = "/intern/editor/post." + @content.name
+	else
+		site_headline = "Seite editieren"
+		form_action = "/intern/editor/site." + @content.name
+	end
+end
+%>
+
+<h1 class="headline"><%= site_headline %></h1>
+
+<form action="<%=form_action %>" method="post" accept-charset="utf-8" class="form content_box post_editor">
+	<p><textarea name="raw_content" class="form_textarea"><%=@content.raw_content %></textarea></p>
+	
+	<p><button type="submit"><%= site_headline %></button></p>
+</form>

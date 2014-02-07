@@ -1,0 +1,20 @@
+<%
+posts = @user.blog.posts
+%>
+<h1 class="headline">Post Verwaltung</h1>
+
+<section class="form content_box">
+	<% if posts.length == 0 then %>
+		<p>Keine Posts vorhanden. <a href="/intern/editor/post.new">Neuen Post erstellen</a></p>
+	<% else %>
+	<table class="content_table">
+		<% posts.each do |post| %>
+			<tr>
+				<td><%=post.name %></td>
+				<td><a href="/intern/editor/post.<%=post.name %>" title="Post bearbeiten">Bearbeiten</td>
+				<td><a href="/intern/delete/post.<%=post.name %>" title="Post löschen">Löschen</td>
+			</tr>
+		<% end %>
+	</table>
+	<% end %>
+</section>

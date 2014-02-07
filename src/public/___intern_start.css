@@ -1,0 +1,112 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+html, body {
+	height: 100%;
+	
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+#container {
+	min-height: 100%; /* Mindesthöhe auf 100 % (bei modernen Browsern) */
+	height: auto; /* important Behel (bei modernen Browsern */
+	height: 100%; /* IE soll wie gewünscht interpretieren */
+}
+
+a:link, a:visited, a:hover, a:active {
+	text-decoration: none;
+	color: black;
+}
+
+/* sections */
+.header_section {
+	height: 80px;
+	
+	background-color: #999;
+}
+
+.main_section {
+	background-color: #fff;
+}
+
+.footer_section {
+	height: 60px;
+
+	background-color: #ccc;
+}
+
+/* section_content */
+.section_content {
+	width: 800px;
+	margin: auto;
+	
+	height: 100%;
+}
+
+/* header_section */
+.section_content > div {
+	padding-top: 20px;
+}
+
+.header_section .logo {
+	width: 50%;
+	float: left;
+}
+
+.header_section .logo h1 {
+	font-size: 2.2em;
+	
+	color: #222;
+	text-decoration: none;
+}
+
+.header_section .login {
+	width: 50%;
+	float: left;
+	
+	text-align: right;
+}
+
+/* main_section */
+.main_section {
+	
+}
+
+/* footer_section */
+.footer_section p {
+	text-align: center;
+	padding-top: 20px;
+}
+
+/* main_content */
+.main_navigation {
+	width: 180px;
+	float: left;
+}
+	.main_navigation ul {
+		list-style-type: none;
+	}
+	
+	.main_navigation li {
+		
+	}
+	
+	.main_navigation a:link, .main_navigation a:hover {		
+		display: inline-block;
+		width: 172px;
+		
+		padding: 10px 4px;
+		background-color: #ccc;
+	}
+
+.main_content {
+	width: 599px;
+	float: left;
+	
+	padding: 10px;
+
+	border-left: 1px solid black;
+}
